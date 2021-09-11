@@ -28,16 +28,13 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-  List<Icon> scoreKeeper = [
-    Icon(
-      Icons.check,
-      color: Colors.green,
-    ),
-    Icon(
-      Icons.close,
-      color: Colors.red,
-    )
+  List<Icon> scoreKeeper = [];
+  List<String> questions = [
+    'The name of Safiullah\'s father is Parvez',
+    'Safiullah like to eat Grapefruit',
+    'Safiullah\'s favourite color is yellow'
   ];
+  int questionNumber = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +48,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go.',
+                questions[questionNumber],
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -75,6 +72,10 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+                setState(() {
+                  questionNumber++;
+                });
+                print(questionNumber);
                 //The user picked true.
               },
             ),
@@ -94,6 +95,10 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+                setState(() {
+                  questionNumber++;
+                });
+                print(questionNumber);
                 //The user picked false.
               },
             ),
