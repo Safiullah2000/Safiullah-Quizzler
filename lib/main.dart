@@ -35,6 +35,7 @@ class _QuizPageState extends State<QuizPage> {
     'Safiullah\'s favourite color is yellow'
   ];
   int questionNumber = 0;
+  List<bool> answers = [true, true, false];
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +73,14 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+                bool correctAnswer = answers[questionNumber];
+
+                if (correctAnswer == true) {
+                  print("The user answer is correct");
+                } else {
+                  print("The user answer is wrong");
+                }
+
                 setState(() {
                   questionNumber++;
                 });
@@ -95,6 +104,14 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+                bool correctAnswer = answers[questionNumber];
+
+                if (correctAnswer == false) {
+                  print("The user answer is correct");
+                } else {
+                  print("The user answer is wrong");
+                }
+
                 setState(() {
                   questionNumber++;
                 });
