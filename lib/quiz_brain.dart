@@ -1,7 +1,8 @@
 import 'question.dart';
 
 class QuizBrain {
-  List<Question> questionBank = [
+  int _questionNumber = 0;
+  List<Question> _questionBank = [
     Question('The name of Safiullah\'s father is Parvez', true),
     Question('Safiullah like to eat Grapefruit', true),
     Question('Safiullah\'s favourite color is yellow', false),
@@ -9,4 +10,18 @@ class QuizBrain {
     Question('Safiullah likes to play football', false),
     Question('Safiullah likes to ride a bike', true)
   ];
+
+  void nextQuestion() {
+    if (_questionNumber < _questionBank.length - 1) {
+      _questionNumber++;
+    }
+  }
+
+  String getQuestionText() {
+    return _questionBank[_questionNumber].questionText;
+  }
+
+  bool getQuestionAnswer() {
+    return _questionBank[_questionNumber].questionAnswer;
+  }
 }
