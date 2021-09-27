@@ -8,7 +8,10 @@ class QuizBrain {
     Question('Safiullah\'s favourite color is yellow', false),
     Question('Safiullah likes to listen Naats', true),
     Question('Safiullah likes to play football', false),
-    Question('Safiullah likes to ride a bike', true)
+    Question('Safiullah likes to ride a bike', true),
+    Question('Safiullah\'s best friend is Ahmed ', true),
+    Question('Safiullah\'s likes Iphone', false),
+    Question('Safiullah\'s like to do coding', true)
   ];
 
   void nextQuestion() {
